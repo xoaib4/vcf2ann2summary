@@ -30,18 +30,18 @@ No installation is required. Just make the script executable:
 chmod +x vcf2ann2summary.sh
 ```
 ## Usage
-
+```
 ./vcf2ann2summary.sh -V input.vcf -O output_prefix -DB snpEff_database
-
+```
 ### Parameters
 -V	Input VCF file (uncompressed)
 -O	Output prefix (used for VCF and TSV)
 -DB	Name of the snpEff database to use (e.g., GRCh38.99)
 
 ### Output Files
-${output_prefix}.annotated.vcf — VCF file annotated by snpEff
+`${output_prefix}.annotated.vcf` — VCF file annotated by snpEff
 
-${output_prefix}.summary.tsv — Tab-separated summary table of key annotations
+`${output_prefix}.summary.tsv` — Tab-separated summary table of key annotations
 
 ### Example
 ```
