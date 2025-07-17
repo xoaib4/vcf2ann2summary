@@ -16,25 +16,25 @@ done
 
 # Check required arguments
 if [[ -z "$VCF_IN" || -z "$OUT_PREFIX" || -z "$SNPEFF_DB" ]]; then
-  echo "❌ Error: All arguments -V, -O, -DB are required."
+  echo "Error: All arguments -V, -O, -DB are required."
   echo "Usage: $0 -V input.vcf -O output_name -DB snpEff_database"
   exit 1
 fi
 
-echo "✅ Input VCF      : $VCF_IN"
-echo "✅ Output Prefix  : $OUT_PREFIX"
-echo "✅ snpEff DB      : $SNPEFF_DB"
+echo "Input VCF      : $VCF_IN"
+echo "Output Prefix  : $OUT_PREFIX"
+echo "snpEff DB      : $SNPEFF_DB"
 
 # -----------------------------
 # Step 1: Annotate with snpEff
 # -----------------------------
-echo "🎯 Running snpEff..."
+echo "Running snpEff..."
 snpEff -canon "$SNPEFF_DB" "$VCF_IN" > "${OUT_PREFIX}.annotated.vcf"
 
 # -----------------------------
 # Step 2: Extract summary table
 # -----------------------------
-echo "📊 Extracting annotation summary..."
+echo "Extracting annotation summary..."
 
 awk -F'\t' '
 BEGIN {
@@ -68,6 +68,6 @@ BEGIN {
 }
 ' "${OUT_PREFIX}.annotated.vcf" > "${OUT_PREFIX}.summary.tsv"
 
-echo "✅ Output written:"
+echo "Output written:"
 echo "→ Annotated VCF : ${OUT_PREFIX}.annotated.vcf"
 echo "→ Summary Table : ${OUT_PREFIX}.summary.tsv"
