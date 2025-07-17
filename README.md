@@ -45,17 +45,18 @@ ${output_prefix}.summary.tsv — Tab-separated summary table of key annotations
 
 ### Example
 ```
-./vcf2ann2summary.sh -V HEN66PU3M.hard-filtered.vcf -O HEN66PU3M -DB GRCh38.99
+./vcf2ann2summary.sh -V input.vcf -O output -DB GRCh38.99
 ```
 ### Example Output Table
+```
 CHROM	POS	rsID	REF	ALT	AC	GENE	cDNA_CHANGE	PROTEIN_CHANGE	VARIANT_TYPE	LOF
 chr1	123456789	rs123456	A	G	12	ABC1	c.123A>G	p.Lys41Arg	missense_variant	YES
-
-📚 Citation
+```
+## Citation
 If you use this script, please cite:
-
+```
 Akhtar, M.S., Ashino, R., Oota, H., Ishida, H., Niimura, Y., Touhara, K., Melin, A.D. and Kawamura, S., 2022. Genetic variation of olfactory receptor gene family in a Japanese population. Anthropological Science, 130(2), pp.93-106.
-
-📫 Contact
-Created by [Muhammad Shoaib Akhtar]
+```
+## Contact
+Created by Muhammad Shoaib Akhtar
 For questions, suggestions, or issues, please open an issue on GitHub.
